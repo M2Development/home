@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  </head>
+ 
+  <body>
+    <button>Enter the chatroom!</button>
+    <script>
+      var urlObj = new window.URL(window.location.href);
+      var url = "https://e.widgetbot.io/channels/974413277553627176/1053102533318549524?api=8ddc28b2-13d9-4ef0-8352-5759b0b7e2cc";
+      if (url) {
+        var win;
+ 
+        document.querySelector('button').onclick = function() {
+          if (win) {
+            win.focus();
+          } else {
+            win = window.open();
+            win.document.body.style.margin = '0';
+            win.document.body.style.height = '100vh';
+            var iframe = win.document.createElement('iframe');
+            iframe.style.border = 'none';
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.margin = '0';
+            iframe.src = url;
+            win.document.body.appendChild(iframe);
+          }
+          document.querySelector('button').style.bacground = 'grey';
+          document.querySelector('button').innerHTML = "Loaded!";
+        };
+      }
+ 
+    </script>
+  </body>
+ 
+</html>
